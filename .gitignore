@@ -1,0 +1,8 @@
+LD/
+.DS_Store
+.RData
+.Rhistory
+.log
+Software/
+nohup.out
+rep/

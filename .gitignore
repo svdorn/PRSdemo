@@ -1,8 +1,5 @@
-LD/
+input/
+plink/
+prs_scores.txt
 .DS_Store
-.RData
-.Rhistory
-.log
-Software/
-nohup.out
-rep/
+qc/

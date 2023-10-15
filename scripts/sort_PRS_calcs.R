@@ -1,61 +1,43 @@
 #!/s/bin/R35
-library(glue)
-library(data.table)
-library(R.utils)
+suppressMessages(library(data.table))
+suppressMessages(library(R.utils))
 options(stringsAsFactors=F)
 args = commandArgs(trailingOnly=TRUE)
-in_folder <- as.character(args[1])
-k <- as.numeric(args[2])
-out_folder <- paste0(in_folder,"/PRSweights/prs_scores/")
+wd <- as.character(args[1])
 
-extract_scoresum <- function(dat,fid,iid,scoresum){
-    out <- data.frame(FID=dat[,fid],IID=dat[,iid],Scoresum=dat[,scoresum])
+extract_fid_iid <- function(dat,fid,iid){
+    out <- data.frame(FID=dat[,fid],IID=dat[,iid])
     return(out)
 }
 
 extract_score_data <- function(prs_name, num_weights) {
     scores <- c()
     for (i in 1:num_weights) {
-        dat <- as.data.frame(fread(paste0(in_folder, "/PRSweights/final_weights/", prs_name, ".", i, ".profile", header = TRUE)))
-
-        scores <- cbind(scores, dat[,"SCORESUM"])
+        # read scores from .profile file
+        dat <- as.data.frame(fread(paste0(wd, "/", prs_name, ".", i+2, ".profile"), header = TRUE))
+        # normalize the score
+        score <- dat[,"SCORESUM"]
+        normalized_score <- (score - mean(score)) / sd(score)
+        # add the score to the vector of different versions of scores
+        scores <- cbind(scores, normalized_score)
+        colnames(scores)[i] <- paste0(prs_name, ".", i)
     }
 
     return(scores)
 }
 
-# Extract LD Pred2 data
+cat("\nCreating table for final PRS scores from LDpred2 and default PRS methods and normalizing scores...")
 # Set initial table for prs scores
-prs_scores <- c()
+dat.tmp <- as.data.frame(fread(paste0(wd,"/ldpred2.3.profile"), header = TRUE))
+dat <- extract_fid_iid(dat.tmp,fid="FID",iid="IID")
+colnames(dat) <- c("FID", "IID")
+prs_scores <- dat
 
 # Extract LD Pred2 PRS scores
-extract_score_data("ldpred2", 11)
+prs_scores <- cbind(prs_scores, extract_score_data("ldpred2", 11))
 # Extract Default PRS scores
-extract_score_data("default", 5)
-params <- c(1:13)
-for (j in 3:length(params)){
-    dat <- c()
-    dat.tmp <- as.data.frame(fread(paste0(in_folder,"/PRSweights/final_weights/ldpred2.",j,".profile"), header = TRUE))
-    dat.sorted <- extract_scoresum(dat.tmp,fid="FID",iid="IID",scoresum="SCORESUM")
-    dat <- rbind(dat,dat.sorted)
+prs_scores <- cbind(prs_scores, extract_score_data("default", 5))
 
-    if(j == 3) {
-        colnames(dat) <- c("FID", "IID", paste0("LD Pred2 ", j - 2))
-        lddat <- dat
-    } else {
-        lddat <- cbind(lddat, dat[,3])
-        colnames(lddat)[j] <- paste0("LD Pred2 ", j - 2)
-    }
-}
-
-# Extract default PRS score data
-for (j in 1:5) {
-    dat.tmp <- as.data.frame(fread(paste0(in_folder,"/PRSweights/final_weights/default.",j,".profile"), header = TRUE))
-    dat <- extract_scoresum(dat.tmp,fid="FID",iid="IID",scoresum="SCORESUM")
-
-    if (j == 1) {
-
-    }
-}
-
-fwrite(lddat,paste0(out_folder,"ite",k,".ldpred2_prs.txt"),col.names=T,row.names=F,sep="\t",quote=F)
+# write prs scores data to file
+fwrite(prs_scores,"./prs_scores.txt",col.names=T,row.names=F,sep="\t",quote=F)
+cat("\nFinal PRS scores written to file: ./prs_scores.txt")

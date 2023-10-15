@@ -1,6 +1,15 @@
 # PRSdemo
 
 # Set up
+* Clone this repo into a folder on your local computer
+```
+git clone https://github.com/svdorn/PRSdemo.git
+```
+* Change directory into PRSdemo folder
+```
+cd PRSdemo
+```
+
 * `PRS_demo` is developed using R. The statistical computing software R (3.5) and the following packages are required:
   * [tidyverse](https://cran.r-project.org/web/packages/tidyverse/index.html)
   * [data.table](https://cran.r-project.org/web/packages/data.table/index.html)

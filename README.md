@@ -12,7 +12,12 @@
   * [parallel](https://www.rdocumentation.org/packages/parallel/versions/3.6.2)
   * [foreach](https://cran.r-project.org/web/packages/foreach/index.html)
   * [rngtools](https://cran.r-project.org/web/packages/rngtools/index.html)
- 
+
+* Make output folder for PRS weights
+```
+mkdir weights
+```
+
 * Download LD and GWAS data
 ```
 wget ftp://ftp.biostat.wisc.edu/pub/lu_group/Projects/PRS_demo/input

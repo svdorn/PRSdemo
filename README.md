@@ -27,9 +27,9 @@ cd PRSdemo
 mkdir weights
 ```
 
-* Download LD and GWAS data
+* Download LD and GWAS data and put it in the input folder
 ```
-wget ftp://ftp.biostat.wisc.edu/pub/lu_group/Projects/PRS_demo/input
+wget -nd -r -P ./input ftp://ftp.biostat.wisc.edu/pub/lu_group/Projects/PRS_demo/input
 ```
 
 * Download PLINK

@@ -18,7 +18,6 @@ cd PRSdemo
   * [bigsnpr](https://cran.r-project.org/web/packages/bigsnpr/index.html)
   * [bigreadr](https://cran.r-project.org/web/packages/bigreadr/index.html)
   * [optparse](https://cran.r-project.org/web/packages/optparse/index.html)
-  * [parallel](https://www.rdocumentation.org/packages/parallel/versions/3.6.2)
   * [foreach](https://cran.r-project.org/web/packages/foreach/index.html)
   * [rngtools](https://cran.r-project.org/web/packages/rngtools/index.html)
 

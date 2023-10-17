@@ -10,7 +10,7 @@ git clone https://github.com/svdorn/PRSdemo.git
 cd PRSdemo
 ```
 
-* `PRSdemo` is developed using R. The statistical computing software R (3.5) and the following packages are required:
+* `PRSdemo` is developed using R. The statistical computing software R (>=4.3) and the following packages are required:
   * [tidyverse](https://cran.r-project.org/web/packages/tidyverse/index.html)
   * [data.table](https://cran.r-project.org/web/packages/data.table/index.html)
   * [R.utils](https://cran.r-project.org/web/packages/R.utils/index.html)
@@ -18,7 +18,6 @@ cd PRSdemo
   * [bigsnpr](https://cran.r-project.org/web/packages/bigsnpr/index.html)
   * [bigreadr](https://cran.r-project.org/web/packages/bigreadr/index.html)
   * [optparse](https://cran.r-project.org/web/packages/optparse/index.html)
-  * [parallel](https://www.rdocumentation.org/packages/parallel/versions/3.6.2)
   * [foreach](https://cran.r-project.org/web/packages/foreach/index.html)
   * [rngtools](https://cran.r-project.org/web/packages/rngtools/index.html)
 

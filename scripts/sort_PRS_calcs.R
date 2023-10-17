@@ -40,4 +40,4 @@ prs_scores <- cbind(prs_scores, extract_score_data("default", 5))
 
 # write prs scores data to file
 fwrite(prs_scores,"./prs_scores.txt",col.names=T,row.names=F,sep="\t",quote=F)
-cat("\nFinal PRS scores written to file: ./prs_scores.txt")
+cat("\n\nFinal PRS scores written to file: ./prs_scores.txt\n")

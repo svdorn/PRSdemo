@@ -13,14 +13,15 @@ options(stringsAsFactors = FALSE)
 args <- commandArgs(trailingOnly = TRUE)
 wd <- as.character(args[1])
 h2 <- as.numeric(args[2])
+sumstats_path <- as.character(args[3])
+ldref <- as.character(args[4])
 
 m <- 1030186
 cores <- max(1, detectCores() - 1, na.rm = TRUE)
-ldref <- "./input/1kg_hm3_QCed_noM"
 cat("\nRunning PRS model LDpred2 for 22 chromosomes in parallel...\n")
 
 # read and format gwas sumstats
-gwas.raw <- as.data.frame(fread(paste0("./input/gwas_train.txt.gz")))
+gwas.raw <- as.data.frame(fread(sumstats_path))
 gwas.dat <- gwas.raw[,c(1,3,2,10,4:8)]
 colnames(gwas.dat) <- c("chr","rsid","pos","n_eff","a1","a0","MAF","beta","beta_se")
 
@@ -34,7 +35,8 @@ POS <- val_bed$map$physical.pos
 map <- val_bed$map[-(3)]
 names(map) <- c("chr", "rsid", "pos", "a1", "a0")
 # run LDpred2 for each chromosome
-mclapply(1:22, function(chr) {
+ldpred2 <- mclapply(1:22, function(chr) {
+    cat("\nRunning LDpred2 for chromosome ", chr, "\n")
     chr_out_path <- paste0(wd, "/chr", chr, ".ldpred2.txt")
 
     summstats <- gwas.dat[gwas.dat$chr==chr,]
@@ -62,6 +64,7 @@ mclapply(1:22, function(chr) {
         p_seq <- signif(c(1e-3, 1e-2, 0.1), 2)
         h_seq <- round(c(0.1,0.3)*h2_est,4)
         params <- expand.grid(p = p_seq, h2 = h_seq, sparse = c(TRUE,FALSE))
+        print(params)
         beta_grid <- snp_ldpred2_grid(corr_sp, df_beta, params)
         beta_grid <- apply(beta_grid,2,function(s){return(ifelse(is.na(s), 0, s))})
         beta_grid <- apply(beta_grid,2,function(s){return(ifelse(abs(s)>=1, 0, s))})

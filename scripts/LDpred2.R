@@ -17,7 +17,7 @@ h2 <- as.numeric(args[2])
 m <- 1030186
 cores <- max(1, detectCores() - 1, na.rm = TRUE)
 ldref <- "./input/1kg_hm3_QCed_noM"
-cat("Running PRS model LDpred2 for 22 chromosomes in parallel...\n")
+cat("\nRunning PRS model LDpred2 for 22 chromosomes in parallel...\n")
 
 # read and format gwas sumstats
 gwas.raw <- as.data.frame(fread(paste0("./input/gwas_train.txt.gz")))
@@ -35,7 +35,6 @@ map <- val_bed$map[-(3)]
 names(map) <- c("chr", "rsid", "pos", "a1", "a0")
 # run LDpred2 for each chromosome
 mclapply(1:22, function(chr) {
-    cat("\nchr:",chr,"\n")
     chr_out_path <- paste0(wd, "/chr", chr, ".ldpred2.txt")
 
     summstats <- gwas.dat[gwas.dat$chr==chr,]

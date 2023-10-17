@@ -1,8 +1,14 @@
 #!/bin/bash
+
+set -o errexit
+
 script_path="./scripts"
 work_dir="./weights"
 heritability=0.3
 RL=1
+
+# download and import necessary R packages
+Rscript --vanilla ${script_path}/download_R_packages.R
 
 ## genrate PRS scripts
 Rscript --vanilla ${script_path}/LDpred2.R $work_dir $heritability

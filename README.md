@@ -44,7 +44,7 @@ wget -nd -r -P ./input ftp://ftp.biostat.wisc.edu/pub/lu_group/Projects/PRS_demo
    
    *  If you get this error go to System Settings -> Privacy & Security and scroll down until you get to this section. Allow PLINK to be downloaded and try downloading again.
 
-	<img width="495" alt="Screenshot 2023-10-17 at 2 22 42 PM" src="https://github.com/svdorn/PRSdemo/assets/22485021/d04dcfa6-b78e-4914-bd95-0aae17072376">
+		<img width="495" alt="Screenshot 2023-10-17 at 2 22 42 PM" src="https://github.com/svdorn/PRSdemo/assets/22485021/d04dcfa6-b78e-4914-bd95-0aae17072376">
 
 
 

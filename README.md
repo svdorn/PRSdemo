@@ -33,13 +33,14 @@ wget -nd -r -P ./input ftp://ftp.biostat.wisc.edu/pub/lu_group/Projects/PRS_demo
 * Download PLINK
   * [Download PLINK](https://www.cog-genomics.org/plink/)
   * Unzip the downloaded file
-   * <img width="851" alt="Screenshot 2023-10-17 at 1 00 33 PM" src="https://github.com/svdorn/PRSdemo/assets/22485021/0e68097b-f6e7-4444-850b-c4e0d526bd5c">
+    <img width="851" alt="Screenshot 2023-10-17 at 1 00 33 PM" src="https://github.com/svdorn/PRSdemo/assets/22485021/0e68097b-f6e7-4444-850b-c4e0d526bd5c">
   * Move the downloaded file from your Downloads folder to your `PRSdemo` folder
-   * <img width="838" alt="Screenshot 2023-10-17 at 1 04 53 PM" src="https://github.com/svdorn/PRSdemo/assets/22485021/48e9b332-7978-4e6e-b2f5-695d40b2aec2">
+    <img width="838" alt="Screenshot 2023-10-17 at 1 04 53 PM" src="https://github.com/svdorn/PRSdemo/assets/22485021/48e9b332-7978-4e6e-b2f5-695d40b2aec2">
   * Rename the folder to "plink"
-   * <img width="847" alt="Screenshot 2023-10-17 at 1 04 30 PM" src="https://github.com/svdorn/PRSdemo/assets/22485021/76d4dd17-7bb4-4fdd-8cd6-d8136768d8b0">
+    <img width="847" alt="Screenshot 2023-10-17 at 1 04 30 PM" src="https://github.com/svdorn/PRSdemo/assets/22485021/76d4dd17-7bb4-4fdd-8cd6-d8136768d8b0">
   * For macs, you may see the following error message after downloading PLINK:
    <img width="311" alt="Screenshot 2023-10-17 at 2 24 09 PM" src="https://github.com/svdorn/PRSdemo/assets/22485021/ccb90e5f-ea8a-4435-8470-df048f15f255">
+   
    *  If you get this error go to System Settings -> Privacy & Security and scroll down until you get to this section. Allow PLINK to be downloaded and try downloading again.
    <img width="495" alt="Screenshot 2023-10-17 at 2 22 42 PM" src="https://github.com/svdorn/PRSdemo/assets/22485021/d04dcfa6-b78e-4914-bd95-0aae17072376">
 

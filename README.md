@@ -27,6 +27,12 @@ mkdir weights
 ```
 
 * Download LD and GWAS data and put it in the input folder
+If you don't already have `wget` downloaded on your computer, follow the following tutorials to download it on your machine.
+ * [Download and Install wget on Mac](https://www.jcchouinard.com/wget/#Download_and_Install_Wget_on_Mac)
+ * [Download and Install wget on Linux](https://www.jcchouinard.com/wget/#Download_and_Install_Wget_on_Linux)
+ * [Download and Install wget on Windows](https://www.jcchouinard.com/wget/#Download_and_Install_Wget_on_Windows)
+
+Download the LD and GWAS data using `wget`
 ```
 wget -nd -r -P ./input ftp://ftp.biostat.wisc.edu/pub/lu_group/Projects/PRS_demo/input
 ```

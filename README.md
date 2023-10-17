@@ -71,5 +71,5 @@ Where flags are
 If you are using a Windows machine, follow this tutorial for [running .sh scripts in Windows](https://softwarekeep.com/help-center/how-to-run-shell-script-file-in-windows#)
   
 Output will be written to `prs_scores.txt` and the first few rows of data will look like:
-![image](https://github.com/svdorn/PRSdemo/assets/22485021/9e4f0f45-4fbd-4686-b6df-36acb157000a)
 
+![image](https://github.com/svdorn/PRSdemo/assets/22485021/7354c93e-46fe-4656-8fb2-714e0de3307c)

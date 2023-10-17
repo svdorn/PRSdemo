@@ -34,7 +34,7 @@ echo "Operating system: $os";
 ## download and import necessary R packages
 Rscript --vanilla ${script_path}/download_R_packages.R
 
-## genrate PRS scripts
+## run PRS to calculate beta weights
 Rscript --vanilla ${script_path}/LDpred2.R $work_dir $heritability $sumstats_path $ld_path
 Rscript --vanilla ${script_path}/PRS.R $work_dir $sumstats_path
 
@@ -43,7 +43,7 @@ Rscript --vanilla ${script_path}/sort_SNP_weights.R $work_dir
 
 ## calculate PRS scores on genotypes
 # PRS score calculation for LD pred2
-for n in {3..13};
+for n in {3..15};
 do
     echo
     echo "Calculating PRS scores for LDpred2 model ${n}"

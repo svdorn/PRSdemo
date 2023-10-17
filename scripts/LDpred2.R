@@ -64,7 +64,6 @@ ldpred2 <- mclapply(1:22, function(chr) {
         p_seq <- signif(c(1e-3, 1e-2, 0.1), 2)
         h_seq <- round(c(0.1,0.3)*h2_est,4)
         params <- expand.grid(p = p_seq, h2 = h_seq, sparse = c(TRUE,FALSE))
-        print(params)
         beta_grid <- snp_ldpred2_grid(corr_sp, df_beta, params)
         beta_grid <- apply(beta_grid,2,function(s){return(ifelse(is.na(s), 0, s))})
         beta_grid <- apply(beta_grid,2,function(s){return(ifelse(abs(s)>=1, 0, s))})

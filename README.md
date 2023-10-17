@@ -48,7 +48,13 @@ wget -nd -r -P ./input ftp://ftp.biostat.wisc.edu/pub/lu_group/Projects/PRS_demo
 ### Run
 * To run the script to get PRS scores, run
 ```
-bash calculate_prs.sh
+bash calculate_prs.sh \
+	-s ./input/gwas_train.txt.gz \ #path to sumstats_file
+	-l ./input/1kg_hm3_QCed_noM \
+	-g ./input/1kg_hm3_QCed_noM \
+	-p ./plink \
+	-m ldpred2,prs \
+	-o mac
 ```
 * Output will be written to `prs_scores.txt` and the first few rows of data will look like:
 ![image](https://github.com/svdorn/PRSdemo/assets/22485021/9e4f0f45-4fbd-4686-b6df-36acb157000a)

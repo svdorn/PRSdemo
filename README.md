@@ -49,13 +49,21 @@ wget -nd -r -P ./input ftp://ftp.biostat.wisc.edu/pub/lu_group/Projects/PRS_demo
 * To run the script to get PRS scores, run
 ```
 bash calculate_prs.sh \
-	-s ./input/gwas_train.txt.gz \ #path to sumstats_file
-	-l ./input/1kg_hm3_QCed_noM \ # path to LD file
-	-g ./input/1kg_hm3_QCed_noM \ # path to genotype file
-	-p ./plink \ # path to PLINK software
-	-m ldpred2,prs \ # PRS methods you want to run
-	-o mac # operating system (mac, windows, or linux)
+	-s ./input/gwas_train.txt.gz \
+	-l ./input/1kg_hm3_QCed_noM \
+	-g ./input/1kg_hm3_QCed_noM \
+	-p ./plink \
+	-m ldpred2,prs \
+	-o mac
 ```
-* Output will be written to `prs_scores.txt` and the first few rows of data will look like:
+Where flags are 
+* -s: path to sumstats_file
+* -l: path to LD files
+* -g: path to genotype file
+* -p: path to PLINK software
+* -m: PRS methods you want to run
+* -o: opterating system (mac, windows, or linux)
+  
+Output will be written to `prs_scores.txt` and the first few rows of data will look like:
 ![image](https://github.com/svdorn/PRSdemo/assets/22485021/9e4f0f45-4fbd-4686-b6df-36acb157000a)
 

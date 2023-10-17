@@ -39,7 +39,7 @@ wget -nd -r -P ./input ftp://ftp.biostat.wisc.edu/pub/lu_group/Projects/PRS_demo
   * Rename the folder to "plink"
    * <img width="847" alt="Screenshot 2023-10-17 at 1 04 30 PM" src="https://github.com/svdorn/PRSdemo/assets/22485021/76d4dd17-7bb4-4fdd-8cd6-d8136768d8b0">
   * For macs, you may see the following error message after downloading PLINK:
-   *  ![Screenshot 2023-10-15 at 10 37 02 PM](https://github.com/svdorn/PRSdemo/assets/22485021/85969a91-d995-40f3-9ce0-9c3d02772a7f)
+   *  <img width="311" alt="Screenshot 2023-10-17 at 2 24 09 PM" src="https://github.com/svdorn/PRSdemo/assets/22485021/ccb90e5f-ea8a-4435-8470-df048f15f255">
    *  If you get this error go to System Settings -> Privacy & Security and scroll down until you get to this section. Allow PLINK to be downloaded and try downloading again.
     * <img width="495" alt="Screenshot 2023-10-17 at 2 22 42 PM" src="https://github.com/svdorn/PRSdemo/assets/22485021/d04dcfa6-b78e-4914-bd95-0aae17072376">
 

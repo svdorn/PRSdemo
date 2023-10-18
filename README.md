@@ -13,6 +13,7 @@ cd PRSdemo
 
 * `PRSdemo` is developed using R. The statistical computing software R (>=4.3) is required.
   * The following packages are necessary for running `PRSdemo`, but they will be automatically installed for you when you run the demo if you don't already have them installed. Required R packages: [tidyverse](https://cran.r-project.org/web/packages/tidyverse/index.html), [data.table](https://cran.r-project.org/web/packages/data.table/index.html), [R.utils](https://cran.r-project.org/web/packages/R.utils/index.html), [plyr](https://cran.r-project.org/web/packages/plyr/index.html), [bigsnpr](https://cran.r-project.org/web/packages/bigsnpr/index.html), [bigreadr](https://cran.r-project.org/web/packages/bigreadr/index.html), [optparse](https://cran.r-project.org/web/packages/optparse/index.html), [foreach](https://cran.r-project.org/web/packages/foreach/index.html), [rngtools](https://cran.r-project.org/web/packages/rngtools/index.html)
+  	* Please download these R packages ahead of the demo using `install.packges` if you are able to 
 
 * Make output folder for PRS weights
 ```

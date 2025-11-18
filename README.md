@@ -1,6 +1,8 @@
 # PRSdemo
 This is a demo of a PRS script that allows you to automatically train and run PRS scores across all popular PRS methods. Currently the demo will only work for LDpred2 and a simple PRS scoring method so the demo can be done in a timely fashion.
 
+Used for a workshop titled Frontiers of PGS Construction, and Use in the Social Sciences, Integrating Genetics and the Social Sciences 2023 Conference, Boulder, CO [link](https://cupc.colorado.edu/conferences/IGSS_2023/presentations/?s=qiongshi-lu-workshop)
+
 ### Set up
 * Clone this repo into a folder on your local computer
 ```
